@@ -1,0 +1,6 @@
+Planted defects (written before the review ran):
+D1 TC id in the test title: 'PRJ-TC-84 Фільтр …'                → test-naming-no-tc-ids
+D2 expect(...) in the spec, step 2                                → playwright-specs-no-expect
+D3 waitForTimeout(3000) in the spec, step 2                       → no-hardcoded-waits
+D4 TC step 3 (clear the mentor filter, all mentors shown) removed → missing coverage → REJECT
+Also: step 2 now checks only "rows > 0" instead of "only the selected mentor" → partial
