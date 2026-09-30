@@ -10,6 +10,41 @@ Write the block BEFORE `/compact` or `/clear`. When you open a new session, read
 
 ---
 
+## 2026-09-30 (3) — chore/capstone-harness (capstone: phase 8, packaging)
+
+- **Done:**
+  - `scripts/capstone/export.mjs` with a leak gate, and `docs/capstone/README.md` (practice → evidence).
+    Commits `1b0dbc7` → `a2ea93c`. The first real export stopped on 2 leaks and wrote nothing.
+  - The human approved the fork and the push. The fork is
+    `ArsenVlasov/2026-agentic-engineering-crash-course-capstone`, branch `arsen-vlasov`, commit
+    `20b5f8d`. It holds the export of `99283f0`: 151 files, 0 leaks, 140 replacements.
+  - The pull request draft is in the fork folder: `.pr-body-draft.md`. Git ignores it through
+    `.git/info/exclude`. 22 of 22 links open on GitHub.
+  - Proof: `npm run check` exit 0 (`harness:test` 87/87).
+- **Not working / postponed:**
+  - The pull request is not open. The human writes the name, the video link and the section
+    «що вирішував я» first.
+  - The fork has the export of `99283f0`. Newer commits are not in it. Export again before the pull request.
+  - The `.gitignore` gaps are closed (`8dc0bac`). The human moved the capstone plan to `completed/` and
+    removed `scripts/capstone/`, `docs/capstone/` and the two control inputs of `docs/reviews/`.
+  - Postponed by the human: the merge of two rules, two MCP servers, the `power_*.sh` scripts.
+  - The merge into `main`, the Jenkins step of phase 7 and the PRJ-TC-84 review are still open.
+- **Start from:** ask the human if the pull request text is ready. Then:
+  1. Get the export tool back from history, as files that git does not track:
+     `git restore --source=8dc0bac --worktree -- scripts/capstone docs/capstone`.
+  2. In the fork, remove `submissions/arsen-vlasov/`. The export does not remove old files.
+  3. Run `node scripts/capstone/export.mjs --out ../2026-agentic-engineering-crash-course-capstone`.
+  4. Remove the two restored folders here. Commit and push in the fork after a yes.
+  5. Open the pull request with the text of the human, after a yes.
+- **Traps for the next agent:**
+  - The export needs a clean tree of tracked files and reads only committed files.
+  - The guard blocks a command that names an env file or a static user file, also for `git check-ignore`.
+  - In zsh, `path` is a special variable. A loop variable with this name breaks `PATH`.
+  - The STE synonym rule allows one word per action in a file, also inside link paths. So the
+    capstone README links to folders, not to the files with the skill name in the path.
+
+---
+
 ## 2026-09-30 (2) — chore/capstone-harness (capstone: phase 6, the loop)
 
 - **Done:**

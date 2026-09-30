@@ -81,10 +81,15 @@ docs/ autonomy-log.md · context-log.md · bugs/ · loops/ · harness.md
 | 5 Maker ≠ checker | done | `docs/reviews/2026-09-29-control-review.md` |
 | 6 Loop | done (2026-09-30). The human first skipped it, then asked for it. After loop 2, the human stopped the fix loop for the flaky LMS tests | OpenSpec `add-stabilize-loop`: `e1a9540` → `51ace4a` → `e292bc1`. `docs/loops/index.md`, `docs/reviews/2026-09-30-loop2-helper-review.md` |
 | 7 Real task (PRJ-TC-69) | done, except the Jenkins step | `docs/reviews/2026-09-29-phase7-gd-tc-69.md`. The Jenkins step needs the merge into `main` |
-| 8 Packaging | not started. The human postponed it | see `docs/logs/session-notes.md` |
+| 8 Packaging | the fork and the branch are pushed (2026-09-30). The pull request waits for the name, the video and the text of the human | `scripts/capstone/export.mjs` (`1b0dbc7` → `a2ea93c`). Fork `ArsenVlasov/2026-agentic-engineering-crash-course-capstone`, branch `arsen-vlasov`, commit `20b5f8d` |
 
 Harness v2 (2026-09-30) also moved the rules into `.claude/rules/`, made `.cursor/` local, split the docs
 behind `docs/index.md`, and passed all harness and doc text through English and ASD-STE100.
+
+After the push of phase 8, the human moved this plan to `completed/`. The human also removed the
+export tool (`scripts/capstone/`), the README source (`docs/capstone/`) and the two control inputs of
+`docs/reviews/`. Git history has them: the export tool and the README source in `8dc0bac`, the control
+inputs in `bded737`.
 
 ## Phases
 

@@ -37,9 +37,8 @@ code.
 
 | Document | Purpose | Verified |
 |---|---|---|
-| [exec-plans/active/capstone-plan.md](exec-plans/active/capstone-plan.md) | The capstone plan: phases, decisions, schedule | 2026-09-30 |
+| [exec-plans/completed/capstone-plan.md](exec-plans/completed/capstone-plan.md) | The capstone plan: phases, decisions, schedule. Completed | 2026-09-30 |
 | [exec-plans/tech-debt-tracker.md](exec-plans/tech-debt-tracker.md) | Known debt, one row per item | 2026-09-30 |
-| capstone/README.md | The README of the capstone export: practice → evidence. `scripts/capstone/export.mjs` copies it | 2026-09-30 |
 
 A finished plan moves from `exec-plans/active/` to `exec-plans/completed/`. Harness specs live in
 `../openspec/`, and each spec comes before its code. `openspec/specs/` is current, and

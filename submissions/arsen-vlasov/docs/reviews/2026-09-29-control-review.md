@@ -8,12 +8,14 @@
   The prompt told the reviewer to use only Read, Grep, Glob and the read-only AIO tools.
 - Maker: Claude Opus in the main session
 - Input: a copy of `mentor-stats-filters.spec.ts` with four defects planted by the maker, kept outside the
-  repository under a neutral name — [2026-09-29-control-spec.ts.txt](2026-09-29-control-spec.ts.txt)
+  repository under a neutral name — `2026-09-29-control-spec.ts.txt`. The file was removed on
+  2026-09-30. It is in commit `bded737`
 - Test case: PRJ-TC-84, fetched by the reviewer from AIO
 
 ## Planted vs found
 
-The defect list was written before the review ran: [2026-09-29-control-planted-defects.txt](2026-09-29-control-planted-defects.txt).
+The defect list was written before the review ran: `2026-09-29-control-planted-defects.txt`, in
+commit `bded737`.
 
 | Planted | Found | Reviewer's reference |
 |---|---|---|

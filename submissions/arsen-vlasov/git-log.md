@@ -1237,3 +1237,90 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
  docs/logs/autonomy-log.md | 1 +
  1 file changed, 1 insertion(+)
 ```
+
+## 63a6280 2026-09-30 docs(capstone): phase 8 status — the fork and the branch are pushed, the pull request waits
+
+```text
+Fork ArsenVlasov/2026-agentic-engineering-crash-course-capstone, branch arsen-vlasov,
+commit 20b5f8d: the export of 99283f0, 151 files, 0 leaks. The pull request waits for
+the name, the video and the text of the human. The session notes have the handoff.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+
+ docs/exec-plans/active/capstone-plan.md |  2 +-
+ docs/logs/autonomy-log.md               |  2 +-
+ docs/logs/session-notes.md              | 28 ++++++++++++++++++++++++++++
+ 3 files changed, 30 insertions(+), 2 deletions(-)
+```
+
+## 9fb550c 2026-09-30 fix(docs): the session notes broke docs:ste in 63a6280
+
+```text
+63a6280 was committed after a red npm run check: the command joined the check and the
+commit with ";", not "&&". The new trap line used both words of one action.
+npm run check: exit 0 now.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+
+ docs/logs/session-notes.md | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+```
+
+## d84384b 2026-09-30 docs(autonomy): two agent mistakes of phase 8 — a commit after a red check, a lenient test
+
+```text
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+
+ docs/logs/autonomy-log.md | 6 ++++++
+ 1 file changed, 6 insertions(+)
+```
+
+## 8dc0bac 2026-09-30 chore(gitignore): close the gaps — all env files, auth states, personal memory, blob reports
+
+```text
+Before, only two env file names were ignored. Another env file showed as untracked,
+and only the pre-commit hook (after hooks:install) stopped it. Now every env file is
+ignored except the template. The auth state folder is named as a secret in AGENTS.md
+but was not ignored. The personal Claude Code memory file and the Playwright blob
+report are local too. No tracked file becomes ignored (git ls-files -ci: 0).
+docs/harness/git-policy.md has the same rows. npm run check: exit 0.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+
+ .gitignore                 | 8 ++++++--
+ docs/harness/git-policy.md | 7 +++++--
+ 2 files changed, 11 insertions(+), 4 deletions(-)
+```
+
+## e696c96 2026-09-30 chore(capstone): the plan goes to completed/, and the capstone-only files are removed
+
+```text
+By the decision of the human after the push of phase 8:
+- docs/exec-plans/active/capstone-plan.md → docs/exec-plans/completed/
+- removed: scripts/capstone/ (the export tool and its tests), docs/capstone/ (the README
+  source), and the two control inputs of docs/reviews/
+Git history keeps them: 8dc0bac (the export tool, the README source), bded737 (the
+control inputs). The links point to these commits now. The session notes say how to
+get the export tool back before the pull request.
+npm run check: exit 0, harness:test 80 of 80.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+
+ docs/capstone/README.md                            |  59 -----
+ .../{active => completed}/capstone-plan.md         |   5 +
+ docs/index.md                                      |   3 +-
+ docs/logs/autonomy-log.md                          |   2 +-
+ docs/logs/session-notes.md                         |  16 +-
+ .../reviews/2026-09-29-control-planted-defects.txt |   6 -
+ docs/reviews/2026-09-29-control-review.md          |   6 +-
+ docs/reviews/2026-09-29-control-spec.ts.txt        |  53 -----
+ docs/reviews/index.md                              |   2 +-
+ scripts/capstone/export.mjs                        | 248 ---------------------
+ scripts/capstone/export.test.mjs                   |  97 --------
+ 11 files changed, 23 insertions(+), 474 deletions(-)
+```
